@@ -32,7 +32,7 @@ Widget::Widget(QWidget *parent)
     b3.move(50, 50);
 
     //w.show();
-    connect(&b3, &QPushButton::released, this, &Widget::changeWin);
+    //connect(&b3, &QPushButton::released, this, &Widget::changeWin);
 
 
     // 指针函数
@@ -63,13 +63,15 @@ Widget::Widget(QWidget *parent)
                 qDebug() << a << b;
             });*/
 
-    connect(b4, &QPushButton::clicked,
+    connect(b4, &QPushButton::released,
             // = : 把外部所有局部变量、类中所有成员以值传递方式传递
             // this: 类中所有成员以值传递方式传递
             // &: 把外部所有局部变量，引用符号
-            [=](bool isCheck)mutable{
+            [=]()mutable{
 
-                qDebug() << isCheck;
+                //qDebug() << isCheck;
+                w.show();
+                this->hide();
 
             });
 
