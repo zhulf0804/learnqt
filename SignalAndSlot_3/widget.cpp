@@ -35,7 +35,7 @@ Widget::Widget(QWidget *parent)
     //connect(&b3, &QPushButton::released, this, &Widget::changeWin);
 
 
-    // 指针函数
+    // 函数指针
     void (SubWidget::*funSignal)() = &SubWidget::mySignal;
 
     connect(&w, funSignal, this, &Widget::dealSub);
